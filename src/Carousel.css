@@ -1,0 +1,51 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    color: pink;
+  }
+  
+  .carousel-scroll {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    transform: none;/* add this line to prevent spinning */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: pink;
+    background-color: pink;
+  }
+  
+  .carousel-image {
+    /* width: 300px; */
+    margin-top: 160px;
+    height: 275px;
+
+  }
+  
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
