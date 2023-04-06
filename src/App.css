@@ -1,7 +1,8 @@
 .App {
   text-align: center;
-  overflow: hidden;
-
+  /* overflow: hidden; */
+  height: 100vh; /* set the height to the viewport height */
+  overflow: auto; /* allow scrolling within the container */
 }
 .App-logo {
   height: 40vmin;
