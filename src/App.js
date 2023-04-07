@@ -5,6 +5,7 @@ import img1 from './images/bg-1.png'
 import img2 from './images/bg-2.png'
 import img3 from './images/bg-3.png'
 import img4 from './images/bg-4.png'
+// import Wheel from './components/Wheel';
 const imagess = [
   {
     img: img1,
@@ -16,8 +17,8 @@ const imagess = [
   {
     img: img2,
     heading: "Pre Pregnancy",
-    colour:  "rgba(255, 142, 142, 0.45) 24.69%",
-    light_colour: "rgba(255, 208, 216, 0.52)",
+    colour:  "radial-gradient(50% 50% at 50% 50%, rgba(255, 142, 142, 0.45) 24.69%, rgba(255, 208, 216, 0.52) 100%)",
+    light_colour: "radial-gradient(50% 50% at 50% 50%, rgba(255, 142, 142, 0.45) 24.69%, rgba(255, 208, 216, 0.52) 100%)",
     dark: "rgb(255, 72, 160)"
 
   },
@@ -47,7 +48,6 @@ const App = () => {
   return (
     <div>
       <Nav/> 
-      
       <Carousel images={imagess} />
     </div>
   );

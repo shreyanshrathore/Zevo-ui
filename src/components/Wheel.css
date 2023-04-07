@@ -1,0 +1,36 @@
+.wheel {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+  }
+  
+  .component {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 200px;
+    font-size: 2em;
+  }
+  
+  .component:nth-child(1) {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(150px);
+  }
+  
+  .component:nth-child(2) {
+    transform: rotateX(0deg) rotateY(90deg) translateZ(150px);
+  }
+  
+  .component:nth-child(3) {
+    transform: rotateX(0deg) rotateY(180deg) translateZ(150px);
+  }
+  
+  .component:nth-child(4) {
+    transform: rotateX(0deg) rotateY(270deg) translateZ(150px);
+  }
+  

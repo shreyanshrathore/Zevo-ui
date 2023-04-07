@@ -1,0 +1,19 @@
+.container {
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+    margin: 50px auto;
+  }
+  
+  .small-circle {
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    transform-origin: center center;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
+  }
+  
