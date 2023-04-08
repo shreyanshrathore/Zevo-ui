@@ -295,3 +295,57 @@
   font-weight: 900;
 
 }
+
+.wheel-container{
+  display: flex;
+  height: 680px;
+  width: 680px;
+  /* background-color: aqua; */
+  border-radius: 50%;
+  position:relative;
+  /* margin-left: 40px; */
+  /* overflow: auto; */
+}
+
+.lower{
+  width: 680px;
+  height: 680px;
+  background-color: aqua;
+  border-radius: 50%;
+  clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
+  position: absolute;
+  /* z-index: 1; */
+  /* margin-left: 40px; */
+}
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .carousel_container{
+    height: 340px;
+    width: 340px;
+  }
+
+  .shadow-circle{
+    height: 320px;
+    width: 320px;
+  }
+
+  .wheel-contaner{
+    height: 300px;
+    width: 300px;
+  }
+
+  .baap{
+    height: 300px;
+    width: 300px;
+  }
+
+  .lower{
+        height: 300px;
+    width: 300px;
+  }
+}

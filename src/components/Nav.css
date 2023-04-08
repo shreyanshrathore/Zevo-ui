@@ -84,3 +84,34 @@
     background-color: #222!important;
   }
   
+  @media only screen and (max-width: 480px) {
+    .nav-container {
+      height: 64px;
+      width: 100%;
+      border-radius: 32px;
+      margin-bottom: 20px;
+    }
+    .image-cnt{
+      height: 45px;
+      width: 90px;
+      margin-left: 30px;
+    }
+    
+    .lists {
+      margin-right: 0;
+      display: none;
+    }
+    
+    .lists > button {
+      width: 70px;
+      font-size: 14px;
+    }
+    
+    .lists > div {
+      margin-right: 20px;
+      font-size: 12px;
+      height: 30px;
+      margin-top: 10px;
+    }
+  }
+  

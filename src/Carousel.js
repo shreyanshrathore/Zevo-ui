@@ -181,7 +181,7 @@ const Carousel = ({ images }) => {
 
 
             <div className='baap'>
-              <div className="wheel-container" style={containerStyle} onWheel={handleScroll} >
+              <div className="wheel-container" style={containerStyle} onScroll={handleScroll} onWheel={handleScroll} >
                 <div className="a a1">
                   <img src={side} alt="" />
                 </div>
