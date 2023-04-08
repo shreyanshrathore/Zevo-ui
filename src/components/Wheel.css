@@ -95,3 +95,11 @@
     transform: rotate(30deg);
   }
 }
+
+
+@media (max-width: 480px) {
+  .wheel-contaner{
+    height: 300px;
+    width: 300px;
+  }
+}

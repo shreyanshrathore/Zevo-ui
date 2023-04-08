@@ -237,7 +237,7 @@
   height: 415px;
   filter: none; /* Remove any filter from the image */
   right: 170px;
-  margin-bottom: -40px;
+  margin-bottom: -20px;
   margin-right: 20px;
 }
 
@@ -281,7 +281,7 @@
   justify-content: center;
   flex-direction: column;
   margin-top: -90px;
-  margin-left: 320px;
+  margin-left: 330px;
   top: 0;
   left: 0;
   z-index: 2;
@@ -319,33 +319,3 @@
 }
 
 
-
-
-
-
-@media (max-width: 480px) {
-  .carousel_container{
-    height: 340px;
-    width: 340px;
-  }
-
-  .shadow-circle{
-    height: 320px;
-    width: 320px;
-  }
-
-  .wheel-contaner{
-    height: 300px;
-    width: 300px;
-  }
-
-  .baap{
-    height: 300px;
-    width: 300px;
-  }
-
-  .lower{
-        height: 300px;
-    width: 300px;
-  }
-}

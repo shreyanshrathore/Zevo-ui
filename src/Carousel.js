@@ -182,7 +182,7 @@ const Carousel = ({ images }) => {
 
             <div className='baap'>
               <div className="wheel-container" style={containerStyle} onClick={handleScroll} onScroll={handleScroll} onWheel={handleScroll} >
-                <div className="a a1">
+                <div className="a a1" onClick={handleScroll}>
                   <img src={side} alt="" />
                 </div>
                 <div className="a a2">
