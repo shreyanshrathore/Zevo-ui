@@ -318,4 +318,36 @@
   /* margin-left: 40px; */
 }
 
+@media (max-width: 480px) {
+.blur_text{
+  display: none;
+}
 
+.blur > img{
+  margin-right: -40px;
+  height: 315px;
+  
+}
+.blur{
+  margin-top: 350px;
+}
+
+.headings   {
+  display: none;
+}
+
+.buttons{
+  display: none;
+
+}
+
+/* .baap{
+  margin-top: 150px;
+} */
+.shadow-circle{
+  margin-top: 350px;
+}
+.main_div{
+  margin-top: 70px;
+}
+}
