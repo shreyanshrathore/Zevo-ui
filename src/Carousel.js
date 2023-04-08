@@ -1,16 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Carousel.css';
 import PlayCircleFilledRoundedIcon from '@mui/icons-material/PlayCircleFilledRounded';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import mid_pic from './images/centre-image.png'
 import side from './images/side.png'
-const Carousel = ({ images }) => {
+import { handleScroll } from './components/Wheel'
+import MyContext from './Context/MyContext';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import medicall from './images/case.png'
+import amazon from './images/amazon.png'
+import register from './images/register.png'
+import chef from './images/chef.png'
+import main from './images/centre-image.png'
 
+const Carousel = ({ images }) => {
   useEffect(() => {
     AOS.init();
   }, [])
   const [currentImage, setCurrentImage] = useState(0);
+  const [cnt, setCnt] = useState(10);
 
   const handleWheel = (event) => {
     // event.preventDefault();
@@ -40,6 +49,16 @@ const Carousel = ({ images }) => {
     setCurrentImage(newIndex >= images.length ? newIndex - images.length : newIndex < 0 ? images.length + newIndex : newIndex);
   };
 
+  const handlePrevImage = () => {
+    const newIndex = currentImage === 0 ? images.length - 1 : currentImage - 1;
+    setCurrentImage(newIndex);
+  };
+
+  const handleNextImage = () => {
+    const newIndex = currentImage === images.length - 1 ? 0 : currentImage + 1;
+    setCurrentImage(newIndex);
+  };
+
 
   const styled = {
     background: `${images[currentImage].colour}`
@@ -55,6 +74,85 @@ const Carousel = ({ images }) => {
   const light = {
     background: `rgb(246, 252, 255)`
   }
+  const styles = {
+    background: `blue`
+  }
+
+
+
+
+
+
+
+
+
+  // wheel
+
+
+
+
+  const [rotation, setRotation] = useState(0);
+
+
+
+
+
+
+  const handleScroll = (event) => {
+    // get the current rotation angle
+    const currentRotation = rotation;
+    const cnter = cnt;
+    // calculate the new rotation angle based on the scroll delta
+    const delta = event.deltaY;
+    const newRotation = currentRotation + (delta > 0 ? 30 : -30);
+    const newcnter = cnter + (delta > 0 ? 1 : -1);
+    // update the rotation state
+    setRotation(newRotation);
+    setCnt(newcnter);
+
+
+
+
+
+
+
+
+
+  };
+
+  const containerStyle = {
+    transform: `rotate(${rotation}deg)`,
+    transition: 'transform 1s', // adjust the transition duration as needed
+    background: `${images[currentImage].colour}`
+  };
+
+  const lower_color = {
+    background: `${images[currentImage].colour}`
+
+  };
+
+  const handleBoth = (event) => {
+    handleScroll(event);
+    handleWheel(event);
+  }
+
+  const Iconstyle = {
+    color: `#ffd1e7`,
+    background: `white`,
+    padding: `5px`
+  }
+
+  const main_styling= {
+    background: `${images[currentImage].dark}`
+  }
+
+
+
+
+
+
+
+
   return (
     <>
       <div className="head_cnt">
@@ -68,32 +166,87 @@ const Carousel = ({ images }) => {
         </div>
       </div>
       <div className="carousel_container">
+        <div className="main_div" style={main_styling}>
+          <img src={main} alt="" />
+          <div>{images[currentImage].heading}</div>
+        </div>
         <div className='shadow-circle' style={shadow}>
-          <div className="carousel-scroll" onWheel={handleWheel} style={styled}>
-            <div className="circle">
-              <div className='a1 a ' style={light}>
-                <img src={side} className='lightImage' alt="" />
+
+
+          <div onWheel={handleWheel}>
+
+
+
+
+
+
+            <div className='baap'>
+              <div className="wheel-container" style={containerStyle} onWheel={handleScroll} >
+                <div className="a a1">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a2">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a3">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a4">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a5">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a6">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a7">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a8">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a9">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a10">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a11">
+                  <img src={side} alt="" />
+                </div>
+                <div className="a a12">
+                  <img src={side} alt="" />
+                </div>
               </div>
-              <div className='a2 a ' style={light}>
-                <img src={side} className='lightImage' alt="" />
-              </div>
-              <div className='a3 a' style={dark}>
-                <img src={mid_pic} alt="" />
-                <div>{images[currentImage].heading}</div>
-              </div>
-              <div className='a4 a ' style={light}>
-                <img src={side} className='lightImage' alt="" />
-              </div>
-              <div className='a5 a' style={light}>
-                <img src={side} className='lightImage' alt="" />
-              </div>
-            </div>
-            <div className='carousel-image'>
-              <img src={images[currentImage].img} alt="no" className='carousel-img' />
+              <div className="lower" onWheel={handleScroll} style={lower_color}></div>
+
+
             </div>
           </div>
         </div>
       </div>
+
+      <div className="blur">
+        <div className="blur1">
+
+        </div>
+        <img src={images[currentImage].img} alt="" onWheel={handleBoth} />
+        <div className='blur_text'>
+          Build a Great Understanding <br /> About Your Body and Yourself
+          <div className="icons">
+            <img src={medicall} alt="" className='med' />
+            <img src={register} alt="" />
+            <img src={chef} alt="" />
+            <img src={amazon} alt="" />
+          </div>
+          <br />
+          <div className="text2">
+            We are always here to back you at evry stage, starting from pre pregnancy <br /> We are always here to back you at evry stage
+          </div>
+        </div>
+      </div>
+
     </>
   );
 };

@@ -9,7 +9,7 @@ const Navbar = () => {
   // }
   return (
     <>
-      <div className="container">
+      <div className="nav-main-container">
         <div className="nav-container">
           <img src={logo} alt="no" className='image-cnt' />
           <span className="lists">

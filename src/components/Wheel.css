@@ -1,36 +1,122 @@
-.wheel {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    margin: 0 auto;
-    transform-style: preserve-3d;
-    transform-origin: 50% 50%;
+.wheel-container{
+  display: flex;
+  height: 680px;
+  width: 680px;
+  /* background-color: aqua; */
+  border-radius: 50%;
+  position:relative;
+  /* margin-left: 40px; */
+  /* overflow: auto; */
+}
+
+.lower{
+  width: 680px;
+  height: 680px;
+  background-color: aqua;
+  border-radius: 50%;
+  clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
+  position: absolute;
+  /* z-index: 1; */
+  /* margin-left: 40px; */
+}
+
+
+
+
+
+
+.a{
+  display:block;
+  position:absolute;
+  top:51%;
+  left:51%;
+  width:70px;
+  height:70px;
+  margin:-51px;
+  background:rgb(246, 252, 255);
+  border-radius:51%;
+  text-align:center;
+  line-height:100px;
+  cursor: pointer;
+}
+.a > img{
+  height: 41px;
+}
+/* .baap{
+  display: flex;
+} */
+
+.a1 {
+  transform: translate(260px) rotate(-270deg);
+}
+
+.a2 {
+  transform: rotate(30deg) translate(260px) rotate(-270deg);
+}
+
+.a3 {
+  transform: rotate(60deg) translate(260px) rotate(-270deg);
+}
+
+.a4 {
+  transform: rotate(90deg) translate(260px) rotate(-270deg);
+}
+
+.a5 {
+  transform: rotate(120deg) translate(260px) rotate(-270deg);
+}
+
+.a6 {
+  transform: rotate(150deg) translate(260px) rotate(-270deg);
+}
+
+.a7 {
+  transform: rotate(180deg) translate(260px) rotate(-270deg);
+}
+
+.a8 {
+  transform: rotate(210deg) translate(260px) rotate(-270deg);
+}
+
+.a9 {
+  transform: rotate(240deg) translate(260px) rotate(-270deg);
+}
+
+.a10 {
+  transform: rotate(270deg) translate(260px) rotate(-270deg);
+}
+
+.a11 {
+  transform: rotate(300deg) translate(260px) rotate(-270deg);
+}
+
+.a12 {
+  transform: rotate(330deg) translate(260px) rotate(-270deg);
+}
+
+
+
+
+
+
+
+.animate {
+  animation: spin 0.5s ease-in-out;
+}
+@keyframes reverse-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .component {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: #ccc;
-    text-align: center;
-    line-height: 200px;
-    font-size: 2em;
+  to {
+    transform: rotate(-30deg);
   }
-  
-  .component:nth-child(1) {
-    transform: rotateX(0deg) rotateY(0deg) translateZ(150px);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .component:nth-child(2) {
-    transform: rotateX(0deg) rotateY(90deg) translateZ(150px);
+  to {
+    transform: rotate(30deg);
   }
-  
-  .component:nth-child(3) {
-    transform: rotateX(0deg) rotateY(180deg) translateZ(150px);
-  }
-  
-  .component:nth-child(4) {
-    transform: rotateX(0deg) rotateY(270deg) translateZ(150px);
-  }
-  
+}

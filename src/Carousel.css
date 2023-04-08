@@ -17,31 +17,22 @@
     overflow: hidden;
     transition: transform 0.5s ease-in-out;
     transform: none;/* add this line to prevent spinning */
-    /* display: flex;
-    justify-content: center;
-    align-content: center; */
 
     
   }
 
   .shadow-circle{
-    /* position: relative; */
     width: 750px;
     height: 750px;
-    /* margin: 0 auto; */
     border-radius: 50%;
-    /* overflow: hidden; */
-    transition: transform 0.5s ease-in-out;
-    transform: none;/* add this line to prevent spinning */
     display: flex;
     justify-content: center;
-    align-content: center;
-    margin-top: 0;
-    /* background-color: pink;   */
+    align-items: center;
+    position: relative;
   }
   
   .carousel-image {
-    /* margin-top: 50px; */
+    margin-top: -50px;
     display: flex;
     justify-content: center;
   }
@@ -147,7 +138,7 @@
 
 
 
-.a {
+.aa {
   display:block;
   position:absolute;
   top:51%;
@@ -164,15 +155,15 @@
 }
 
 
-.a1 {
+.aa1 {
   transform:rotate(205deg) translate(255px) rotate(-265deg);
 }
 
-.a2 {
+.aa2 {
   transform:rotate(235deg) translate(245px) rotate(-270deg);
 }
 
-/* .a3 {
+.aa3 {
   transform:rotate(271deg) translate(251px) rotate(-271deg);
   height: 100px;
   width: 100px;
@@ -180,13 +171,13 @@
   text-align: center;
   display: flex;
 
-} */
+}
 
-.a4 {
+.aa4 {
   transform:rotate(305deg) translate(245px) rotate(-280deg);
 }
 
-.a5 {
+.aa5 {
   transform:rotate(335deg) translate(255px) rotate(-275deg);
 }
 /* this is buttons for  */
@@ -195,7 +186,7 @@
   height: 5.5vh;
 }
 
-.a3 {
+.aa3 {
   transform:rotate(266deg) translate(255px) rotate(-267deg);
   height: 100px;
   width: 100px;
@@ -206,14 +197,101 @@
   text-align: center;
 }
 
-.a3 > img {
+.aa3 > img {
   width: 33px;
   height: 41px;
   margin-top: 40px;
 }
 
-.a3 > div {
+.aa3 > div {
   font-size: 12px;
   color: white;
   margin-top: -30px; /* positions the div below the image */
+}
+.baap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blur {
+  margin-bottom: 40px;
+  position: relative; /* Add position relative to the container */
+}
+
+.blur1 {
+  position: relative;
+  height: 245px;
+  margin-top: 220px; /* Reduce margin-top */
+  margin-bottom: 0;
+  /* background-color: #7550ff; */
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.blur > img {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  bottom: 0;
+  margin: auto;
+  height: 415px;
+  filter: none; /* Remove any filter from the image */
+  right: 170px;
+  margin-bottom: -40px;
+  margin-right: 20px;
+}
+
+.blur_text {
+  position: absolute; /* Add position absolute to the element */
+  top: 45%; /* Position the element in the middle of the container */
+  left: 17%;
+  transform: translate(-50%, -50%); /* Center the element using translate */
+  font-size: 22px;
+  font-weight: 900;
+  margin-left: 20px;
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  height: 30px;
+  gap: 65px;
+}
+
+.med{
+  height: 30px;
+  background-color: white;
+  padding: 10px;
+}
+
+.text2{
+  font-size: 16px;
+  font-weight: 300;
+}
+
+
+.main_div {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -90px;
+  margin-left: 320px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: blue;
+}
+
+.main_div > div{
+  color: white;
+  font-size: 10px;
+  margin-top: 5px;
+  font-weight: 900;
+
 }

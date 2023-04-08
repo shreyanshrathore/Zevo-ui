@@ -1,68 +1,228 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './Wheel.css';
+import React, { useState } from 'react'
+import './Wheel.css'
+import side from '../images/side.png'
+import Mid from '../images/centre-image.png'
+import MyContext from '../Context/MyContext'
 
-const Wheel = () => {
-  const wheelRef = useRef(null);
-  const [scrollSpeed, setScrollSpeed] = useState(0);
+const Wheel = ({ele}) => {
+    const [rotation, setRotation] = useState(0);
 
-  useEffect(() => {
-    const wheel = wheelRef.current;
 
-    // Handle the scroll event
+
+
+    
+
     const handleScroll = (event) => {
-      event.preventDefault();
+        // get the current rotation angle
+        const currentRotation = rotation;
+        // calculate the new rotation angle based on the scroll delta
+        const delta = event.deltaY;
+        const newRotation = currentRotation + (delta > 0 ? 30 : -30);
+        // update the rotation state
+        setRotation(newRotation);
 
-      // Set a speed threshold and a maximum speed to limit the sensitivity of the wheel rotation
-      const speedThreshold = 50;
-      const maxSpeed = 1000;
 
-      // Calculate the scroll speed
-      const delta = Math.abs(event.deltaY);
-      const speed = Math.min(delta, maxSpeed);
 
-      // Calculate the rotation angle based on the scroll speed
-      const rotationAngle = (speed / speedThreshold) * 90;
 
-      // Determine the direction of rotation
-      const rotationDirection = event.deltaY < 0 ? -1 : 1;
 
-      // Update the scroll speed state
-      setScrollSpeed(speed);
 
-      // Rotate the wheel based on the scroll speed and direction
-      wheel.style.transform = `rotate(${rotationDirection * rotationAngle}deg)`;
+
+
+
     };
 
-    // Add the scroll event listener
-    wheel.addEventListener('wheel', handleScroll);
-
-    // Clean up the event listener
-    return () => {
-      wheel.removeEventListener('wheel', handleScroll);
+    const containerStyle = {
+        transform: `rotate(${rotation}deg)`,
+        transition: 'transform 1s', // adjust the transition duration as needed
+        background: `${ele.colour}`
     };
-  }, []);
 
-  return (
-    <div className="wheel-container">
-      <div ref={wheelRef} className="wheel">
-        <div className="component component-1">
-          <h2>Component 1</h2>
-        </div>
-        <div className="component component-2">
-          <h2>Component 2</h2>
-        </div>
-        <div className="component component-3">
-          <h2>Component 3</h2>
-        </div>
-        <div className="component component-4">
-          <h2>Component 4</h2>
-        </div>
-      </div>
-      <div className="scroll-speed">
-        <p>Scroll Speed: {scrollSpeed}</p>
-      </div>
-    </div>
-  );
-};
+    const lower_color = {
+        background: `${ele.colour}`
 
-export default Wheel;
+    };
+
+    return (
+        <MyContext.Provider value={rotation}>
+
+        <div className='baap'>
+            <div className="wheel-container" style={containerStyle} onWheel={handleScroll} >
+                <div className="a a1">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a2">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a3">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a4">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a5">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a6">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a7">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a8">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a9">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a10">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a11">
+                    <img src={side} alt="" />
+                </div>
+                <div className="a a12">
+                    <img src={side} alt="" />
+                </div>
+            </div>
+            <div className="lower" onWheel={handleScroll} style={lower_color}></div>
+
+
+        </div>
+        </MyContext.Provider>
+    )
+}
+
+export default Wheel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import './Wheel.css';
+// import side from '../images/side.png';
+
+// const Wheel = () => {
+//   const [rotation, setRotation] = useState(0);
+//   const [visibleIndices, setVisibleIndices] = useState([0, 1, 2, 3, 4]);
+
+//   const handleScroll = (event) => {
+//     // get the current rotation angle
+//     const currentRotation = rotation;
+//     // calculate the new rotation angle based on the scroll delta
+//     const delta = event.deltaY;
+//     let newRotation = currentRotation + (delta > 0 ? 30 : -30);
+//     // update the rotation state
+//     setRotation(newRotation);
+
+//     // update the visible indices
+//     const newVisibleIndices = [...visibleIndices];
+//     if (delta > 0) {
+//       // scroll down
+//       if (newRotation % 360 >= 300 && visibleIndices[4] < 11) {
+//         newVisibleIndices.shift();
+//         newVisibleIndices.push(visibleIndices[4] + 1);
+//         setVisibleIndices(newVisibleIndices);
+//       }
+//     } else {
+//       // scroll up
+//       if (newRotation % 360 <= 60 && visibleIndices[0] > 0) {
+//         newVisibleIndices.pop();
+//         newVisibleIndices.unshift(visibleIndices[0] - 1);
+//         setVisibleIndices(newVisibleIndices);
+//       }
+//     }
+//   };
+
+//   const containerStyle = {
+//     transform: `rotate(${rotation}deg)`,
+//     transition: 'transform 1s', // adjust the transition duration as needed
+//   };
+
+//   const wheelDivs = Array.from({ length: 12 }, (_, index) => {
+//     const isVisible = visibleIndices.includes(index);
+//     return (
+//       <div className={`a a${index + 1}`} key={index} style={{ display: isVisible ? 'block' : 'none' }}>
+//         <img src={side} alt="" />
+//       </div>
+//     );
+//   });
+
+//   return (
+//     <div className="baap">
+//       <div className="wheel-container" style={containerStyle} onWheel={handleScroll}>
+//         {wheelDivs}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Wheel;
