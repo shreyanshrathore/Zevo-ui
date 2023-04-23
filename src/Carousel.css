@@ -31,13 +31,20 @@
     position: relative;
   }
   
+  .mainImage{
+    width: auto;
+    height: 70px;
+    margin-bottom: -10px;
+    margin-top: -10px;
+  }
   .carousel-image {
     margin-top: -50px;
     display: flex;
     justify-content: center;
   }
   .carousel-img{
-    height: 340px;
+    height: 380px;
+    width: auto;
   }
   
   .carousel-prev,
@@ -74,7 +81,7 @@
   }
 
   .buttons{
-    margin-left: 12px;
+    margin-left: 34px;
     display: flex;
     flex-direction: row;
     height: 40px;
@@ -83,7 +90,8 @@
   
   .buttons > button{
     font-weight: 900;
-    background-color: #7550ff;
+    background-color: rgb(230, 230, 255);;
+    color: red;
     font-size: 14px;
     border-radius: 26px;
     display: flex;
@@ -235,10 +243,27 @@
   bottom: 0;
   margin: auto;
   height: 415px;
+  width: auto;
   filter: none; /* Remove any filter from the image */
-  right: 170px;
+  right: 30px;
   margin-bottom: -20px;
   margin-right: 20px;
+}
+
+#one{
+  right: 30px;
+}
+
+#two{
+  right: 140px;
+}
+
+#three{
+  right: 140px;
+}
+
+#four{
+  right: 130px;
 }
 
 .blur_text {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Wheel.css'
 import side from '../images/side.png'
 import Mid from '../images/centre-image.png'
-import MyContext from '../Context/MyContext'
+import MyContext from '../context/DataProvider'
 
 const Wheel = ({ele}) => {
     const [rotation, setRotation] = useState(0);

@@ -4,15 +4,23 @@ import PlayCircleFilledRoundedIcon from '@mui/icons-material/PlayCircleFilledRou
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import mid_pic from './images/centre-image.png'
-import side from './images/side.png'
+import main from './images/mainlogo.png'
 import { handleScroll } from './components/Wheel'
-import MyContext from './Context/MyContext';
+import MyContext from './context/DataProvider';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import medicall from './images/case.png'
 import amazon from './images/amazon.png'
 import register from './images/register.png'
 import chef from './images/chef.png'
-import main from './images/centre-image.png'
+import side from './images/sidelogo.png'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
+
+
+
+
+
+
 
 const Carousel = ({ images }) => {
   useEffect(() => {
@@ -144,6 +152,7 @@ const Carousel = ({ images }) => {
 
   const main_styling= {
     background: `${images[currentImage].dark}`
+    
   }
 
 
@@ -159,7 +168,7 @@ const Carousel = ({ images }) => {
         <h1 className="headings">{images[currentImage].heading}</h1>
       </div>
       <div className="buttons">
-        <button>Download App</button>
+        <button> <Link to="/codepen">Start Here</Link> </button>
         <div className="video_play" style={{ backgroundColor: `${images[currentImage].light_colour}` }}>
           <PlayCircleFilledRoundedIcon style={{ color: `${images[currentImage].dark}` }} />
           <span>Play intro</span>
@@ -167,7 +176,7 @@ const Carousel = ({ images }) => {
       </div>
       <div className="carousel_container">
         <div className="main_div" style={main_styling}>
-          <img src={main} alt="" />
+          <img src={main} alt="" className='mainImage'/>
           <div>{images[currentImage].heading}</div>
         </div>
         <div className='shadow-circle' style={shadow}>
@@ -231,7 +240,7 @@ const Carousel = ({ images }) => {
         <div className="blur1">
 
         </div>
-        <img src={images[currentImage].img} alt="" onWheel={handleBoth} />
+        <img src={images[currentImage].img} alt="" onWheel={handleBoth} id= {`${images[currentImage].key}`}/>
         <div className='blur_text'>
           Build a Great Understanding <br /> About Your Body and Yourself
           <div className="icons">
@@ -242,7 +251,7 @@ const Carousel = ({ images }) => {
           </div>
           <br />
           <div className="text2">
-            We are always here to back you at evry stage, starting from pre pregnancy <br /> We are always here to back you at evry stage
+            We are always here to back you at every innovative idea, starting from making projects <br /> We are always here to back you at every stage.
           </div>
         </div>
       </div>
