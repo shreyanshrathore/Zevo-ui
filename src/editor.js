@@ -1,96 +1,3 @@
-// import React from 'react'
-// import { useState } from 'react';
-// import { Box, styled } from '@mui/material'
-// import {Controlled as ControlledEditor} from 'react-codemirror2'
-// import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
-// import 'codemirror/lib/codemirror.css';
-// import 'codemirror/theme/material.css';
-// import 'codemirror/mode/xml/xml';
-// import 'codemirror/mode/css/css';
-// import 'codemirror/mode/javascript/javascript';
-// import './App.css'
-
-// const Container = styled(Box)`
-// flex-grow:1;
-// flex-basic:0;
-// display: flex;
-//   flex-direction: column;
-//   padding: 0 8px 8px;
-//   background-color:rgb(230, 230, 255);;
-// `
-
-// const Heading = styled(Box)`
-//     background: #1d1e22;
-//     display: flex;
-//     padding: 9px 12px;  
-// `
-
-
-// const Header = styled(Box)`
-//     background: rgb(230, 230, 255);;
-//     display: flex;
-//     color:#AAAEBC;
-//     padding: 9px 12px; 
-//     justify-content: space-between;
-//     font-weight: 700; 
-// `
-
-
-// const Editor = ({header , icon , color , value , onChange}) => {
-
-//     const[open , setOpen] = useState(true);
-
-//     const handleChange = (editor, data, value) => {
-//         onChange(value);
-//     }
-
-//   return (
-//     <Container style={open? null : {flexGrow: 0}}>
-//         <Header>
-//             <Heading>
-//                 <Box component="span"
-//                 style={{background:color,
-//                         height: 20,
-//                         width: 20,
-//                         display: 'flex',
-//                         placeContent: 'center',
-//                         borderRadius: 5,
-//                         marginRight:5,
-//                         paddingBottom:2,
-//                         color:'#000'
-//                     }}
-//                 >
-//                     {icon}
-//                 </Box>
-//                 {header}
-//             </Heading>
-//             <CloseFullscreenIcon
-//             fontSize='small'
-//             style={{alignSelf:'center'}}
-//                 onClick = {() => setOpen(prevState => !prevState)}
-//             />
-//         </Header>
-//         <ControlledEditor
-//         className='controlled-editor'
-//         value={value}
-//         onBeforeChange = {handleChange}
-//         options={{
-//             theme: "material",
-//             lineNumbers: true
-            
-
-//         }}
-//         />
-//     </Container>
-//   )
-// }
-
-// export default Editor
-
-
-
-
-
 import React from 'react';
 import { useState } from 'react';
 import { Box, styled } from '@mui/material';
@@ -102,6 +9,7 @@ import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
 import './App.css';
+import './editor.css'
 
 const Container = styled(Box)`
   flex-grow: 1;
@@ -131,7 +39,7 @@ const getval = {
     color:`red`
 }
 
-const Editor = ({ header, icon, color, value, onChange }) => {
+const Editor = ({ header, icon, color, value, onChange, buttonfunc, buttonval  }) => {
   const [open, setOpen] = useState(true);
   const [editorValue, setEditorValue] = useState(value);
 
@@ -148,6 +56,7 @@ const Editor = ({ header, icon, color, value, onChange }) => {
     <Container style={open ? null : { flexGrow: 0 }}>
       <Header>
         <Heading>
+          
           <Box
             component="span"
             style={{
@@ -181,7 +90,7 @@ const Editor = ({ header, icon, color, value, onChange }) => {
           lineNumbers: true,
         }}
       />
-      <button onClick={handleClick} style={getval}>Get Editor Value</button>
+      <button onClick={buttonfunc} style={getval}>{buttonval}</button>
     </Container>
   );
 };

@@ -16,12 +16,13 @@ const Navbar = () => {
     <>
       <div className="nav-main-container">
         <div className="nav-container">
-          <img src={Logo} alt="no" className='image-cnt' />
+          <Link to = "/"><img src={Logo} alt="no" className='image-cnt' /></Link>
           <span className="lists">
 
             <div id='home'>Home</div>
             <div>About us</div>
-            <div>Contact us</div>
+            
+               <div><Link to="https://redirecter-ue15.vercel.app/" target="_blank">Contact Us</Link></div> 
             <div>Blog</div>
             <div>Faq</div>
             <button> <Link to = "/login">Login</Link></button>

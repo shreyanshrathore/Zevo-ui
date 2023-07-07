@@ -163,12 +163,17 @@ const Carousel = ({ images }) => {
 
 
   return (
-    <>
+    <div id='roots'>
       <div className="head_cnt">
         <h1 className="headings">{images[currentImage].heading}</h1>
       </div>
       <div className="buttons">
-        <button> <Link to="/codepen">Start Here</Link> </button>
+      <button>
+  <Link to={images[currentImage].key === 'three' ? '/allprojects' : '/codepen'}>
+    Start Here
+  </Link>
+</button>
+
         <div className="video_play" style={{ backgroundColor: `${images[currentImage].light_colour}` }}>
           <PlayCircleFilledRoundedIcon style={{ color: `${images[currentImage].dark}` }} />
           <span>Play intro</span>
@@ -256,7 +261,7 @@ const Carousel = ({ images }) => {
         </div>
       </div>
 
-    </>
+    </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Carousel from './Carousel';
 import Nav from './components/Navbar'
 import img1 from './images/project1.png'
@@ -11,34 +12,16 @@ import Register from './pages/Register'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dataprovider from './context/DataProvider';
 import Header from './header';
-import Result from './result';
+import Result from './Result';
 import Code from './code';
-
+import AllProjects from './pages/AllProjects';
+import { useLocation } from 'react-router-dom';
+import Projestss from './pages/Projectpage'
+import './App.css'
+import Projects from './pages/Allprojects/Card' 
+// import Contact from './pages/Contact'
 
 // import Codepen from './pages/codepen/App' 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const imagess = [
@@ -91,38 +74,62 @@ const imagess = [
 
 
 const App = () => {
+  const [docRef, setDocRef] = useState(null);
 
 
   return (
-      <Routes>
-        <Route path="/"
-          element={<>
-            <Nav />
-            <Carousel images={imagess} />
-            <Blur prop={imagess} />
-          </>}><Route/>
+    <Routes>
+      <Route path="/"
+        element={<div className='gand'>
+          <Nav />
+          <Carousel images={imagess} />
+          <Blur prop={imagess} />
+          {/* <Projects/> */}
+        </div>}><Route />
 
-        </Route>
-          <Route path="login" element={<Login />}></Route>
-          <Route path="register" element={<Register />}></Route>
-          <Route path = "codepen" 
-            element= {
-              <>
-              <Dataprovider>
+      </Route>
+      <Route path="login" element={<Login />}></Route>
+      <Route path="register" element={<Register />}></Route>
+      <Route path="codepen"
+        element={
+          <>
+            <Dataprovider>
 
               {/* <div className="App"> */}
-               <Nav/>
-               <Code/>
-               <Result/>
+              <Nav />
+              <Code />
+              <Result />
               {/* </div> */}
-              </Dataprovider>
-              </>
-            }
-          >
+            </Dataprovider>
+          </>
+        }
+      >
 
-          </Route>
 
-      </Routes>
+      </Route>
+      <Route path="allprojects" element={
+        <div>
+          <Nav />
+          <AllProjects />
+        </div>
+      }></Route>
+      <Route path="contact" component={() => {
+        window.location.href = 'https://redirecter-ue15.vercel.app/';
+        return null;
+      }} />
+      <Route path='code' element = {
+        <>
+        <Dataprovider>
+
+        <Nav/>
+        <Projestss/>
+        <Result/>
+        </Dataprovider>
+        </>
+      }></Route>
+
+    </Routes>
+
   );
 };
 

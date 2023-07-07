@@ -1,7 +1,8 @@
 import { createContext, useState } from 'react';
+import { useContext } from 'react';
 
 
-export const DataContext = createContext();
+export const DataContext = createContext("");
 
 const DataProvider = ({ children }) => {
     
